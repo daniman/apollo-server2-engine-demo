@@ -30,8 +30,10 @@ const server = new ApolloServer({
   mocks,
   typeDefs,
   resolvers,
-  tracing: true,
-  cacheControl: true
+  engine: {
+    apiKey: 'service:lafourchette:DERRb5z1HtF63UXZNQzhGw',
+    endpointUrl: 'https://engine-staging-report.apollodata.com'
+  }
 });
 
 server.listen().then(({ url }) => {
